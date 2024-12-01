@@ -20,6 +20,8 @@ import PropTypes from "prop-types";
 
 // Custom styles for MKTypography
 import MKTypographyRoot from "components/MKTypography/MKTypographyRoot";
+import { alignProperty } from "@mui/material/styles/cssUtils";
+import { FormatAlignJustifyOutlined } from "@mui/icons-material";
 
 const MKTypography = forwardRef(
   (

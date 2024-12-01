@@ -51,8 +51,8 @@ function Information() {
               />
               <RotatingCardBack
                 image={bgBack}
-                title="Discover More"
-                description="You will save a lot of time going from prototyping to full-functional code because all elements are implemented."
+                title="Danh mục"
+                description="."
                 action={{
                   type: "internal",
                   route: "/sections/page-sections/page-headers",

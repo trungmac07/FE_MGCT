@@ -22,10 +22,10 @@ import Icon from "@mui/material/Icon";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function BuiltByDevelopers() {
-  const bgImage =
-    "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/desktop.jpg";
-
+function BuiltByDevelopers({header, content1, content2, content3, footer, img_url, bg_darkness}) {
+  const bgImage = img_url;
+  const text_color = bg_darkness > 0.5 ? "white" : "black"
+  
   return (
     <MKBox
       display="flex"
@@ -36,25 +36,26 @@ function BuiltByDevelopers() {
       sx={{
         backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
           `${linearGradient(
-            rgba(gradients.dark.main, 0.8),
-            rgba(gradients.dark.state, 0.8)
+            rgba(gradients.dark.main, bg_darkness),
+            rgba(gradients.dark.state, bg_darkness)
           )}, url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       <Container>
-        <Grid container item xs={12} lg={6} sx={{ ml: { xs: 0, lg: 6 } }}>
-          <MKTypography variant="h4" color="white" fontWeight="bold">
-            Built by developers
+        <Grid container item xs={12} lg={7} sx={{ ml: { xs: 0, lg: 6 } }}>
+          <MKTypography variant="h1" color={text_color} mb={1}>
+            {header}
           </MKTypography>
-          <MKTypography variant="h1" color="white" mb={1}>
-            Complex Documentation
+          <MKTypography variant="body1" color={text_color} opacity={0.85} mb={2} sx={{ textAlign: "justify" }}>
+            {content1}
           </MKTypography>
-          <MKTypography variant="body1" color="white" opacity={0.8} mb={2}>
-            From colors, cards, typography to complex elements, you will find the full
-            documentation. Play with the utility classes and you will create unlimited combinations
-            for our components.
+          <MKTypography variant="body1" color={text_color} opacity={0.85} mb={2} sx={{ textAlign: "justify" }}>
+            {content2 ? content2 : ""}
+          </MKTypography>
+          <MKTypography variant="body1" color={text_color} opacity={0.85} mb={2} sx={{ textAlign: "justify" }}>
+            {content3 ? content2 : ""}
           </MKTypography>
           <MKTypography
             component="a"
@@ -62,7 +63,7 @@ function BuiltByDevelopers() {
             target="_blank"
             rel="noreferrer"
             variant="body2"
-            color="white"
+            color={text_color}
             fontWeight="regular"
             sx={{
               display: "flex",
@@ -79,7 +80,7 @@ function BuiltByDevelopers() {
               },
             }}
           >
-            Read docs <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
+            {footer}
           </MKTypography>
         </Grid>
       </Container>

@@ -78,12 +78,21 @@ function Presentation() {
           mx: { xs: 2, lg: 3 },
           mt: -8,
           mb: 4,
-          backgroundColor: ({ palette: { white }, functions: { rgba } }) => rgba(white.main, 0.8),
+          backgroundColor: ({ palette: { white }, functions: { rgba } }) => rgba(white.main, 0.5),
           backdropFilter: "saturate(200%) blur(30px)",
           boxShadow: ({ boxShadows: { xxl } }) => xxl,
         }}
       >
-        <Counters />
+        <Container sx={{ mt: 6 }} >
+          <BuiltByDevelopers 
+              header = "Lời Giới Thiệu"
+              content1 = 'Chào mừng bạn đến với trang web phát triển kỹ năng tự phê bình "Mảnh Ghép Của Tôi" – nơi dành riêng cho việc khám phá và cải thiện khả năng tự nhận thức và tự đánh giá bản thân. Tại đây, bạn sẽ tìm thấy các thông tin đầy đủ về khái niệm và tri thức liên quan đến tự phê bình, giúp bạn hiểu rõ hơn về vai trò quan trọng của kỹ năng này trong việc phát triển cá nhân. Ngoài ra, chúng tôi cung cấp các tài nguyên hữu ích nhằm hỗ trợ bạn trong quá trình rèn luyện và phát triển kỹ năng tự phê bình một cách hiệu quả.'
+              content2 = "Trang web còn tích hợp một diễn đàn năng động, nơi mọi người có thể cùng chia sẻ kinh nghiệm và học hỏi lẫn nhau, tạo nên một cộng đồng tích cực và thân thiện dành cho những ai đang trên hành trình nâng cao nhận thức bản thân. Bên cạnh đó, mục nhật ký cá nhân sẽ giúp bạn lưu giữ và theo dõi quá trình tự phê bình của mình mỗi ngày, giúp bạn có cái nhìn toàn diện hơn về sự tiến bộ và phát triển của chính mình."
+              content3 = 'Chúng tôi tin rằng, với sự đồng hành và hỗ trợ từ trang web này, bạn sẽ từng bước nâng cao kỹ năng tự phê bình, từ đó đạt được sự tự tin và trưởng thành trong cuộc sống.'
+              footer = "Trân trọng."
+              img_url = "https://i.imgur.com/U1ayMEg.png" 
+              bg_darkness = {0.15}/>
+        </Container>
         <Information />
         <DesignBlocks />
         <Pages />
